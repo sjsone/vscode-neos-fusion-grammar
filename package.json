@@ -1,7 +1,7 @@
 {
     "name": "vscode-neos-fusion-grammar",
-    "displayName": "vscode-neos-fusion-grammar",
-    "description": "",
+    "displayName": "NEOS Fusion & AFX Grammar",
+    "description": "Syntax highlighting for Neos Fusion (and AFX)",
     "version": "0.0.1",
     "publisher": "SimonSchmidt",
     "galleryBanner": {
@@ -37,6 +37,17 @@
         ]
     },
     "repository": "git@github.com:sjsone/vscode-neos-fusion-grammar.git",
-    "author": "sjsone <simon@sjs.one>",
-    "license": "AGPL-3.0-or-later"
+    "bugs": {
+        "url": "https://github.com/sjsone/vscode-neos-fusion-grammar/issues"
+    },
+    "homepage": "https://github.com/sjsone/vscode-neos-fusion-grammar#readme",
+    "author": "Simon J. Schmidt",
+    "license": "AGPL-3.0-or-later",
+    "keywords": [
+        "Neos",
+        "NEOS CMS",
+        "Fusion",
+        "AFX",
+        "EEL"
+    ]
 }
