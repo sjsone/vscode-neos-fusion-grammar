@@ -4,6 +4,10 @@
     "description": "",
     "version": "0.0.1",
     "publisher": "SimonSchmidt",
+    "galleryBanner": {
+        "color": "#2E8879",
+        "theme": "dark"
+    },
     "engines": {
         "vscode": "^1.70.0"
     },
@@ -31,5 +35,8 @@
                 "path": "./syntaxes/neosfusion.tmLanguage.json"
             }
         ]
-    }
+    },
+    "repository": "git@github.com:sjsone/vscode-neos-fusion-grammar.git",
+    "author": "sjsone <simon@sjs.one>",
+    "license": "AGPL-3.0-or-later"
 }
