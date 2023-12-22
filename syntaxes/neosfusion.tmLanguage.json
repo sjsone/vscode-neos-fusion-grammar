@@ -1,0 +1,458 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Fusion",
+	"scopeName": "source.neosfusion",
+	"patterns": [
+		{
+			"include": "#statements"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"injections": {
+		"L:meta.tag": {
+			"patterns": [
+				{
+					"include": "#injections_afx"
+				}
+			]
+		}
+	},
+	"repository": {
+		"statements": {
+			"patterns": [
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#dsl"
+				},
+				{
+					"include": "#statement_include"
+				},
+				{
+					"include": "#statement_prototype"
+				},
+				{
+					"include": "#operators"
+				},
+				{
+					"include": "#literals"
+				},
+				{
+					"include": "#eel_value"
+				},
+				{
+					"include": "#helper_prototype_name"
+				},
+				{
+					"include": "#statement_object_path"
+				}
+			],
+			"repository": {
+				"keywords": {
+					"patterns": [
+						{
+							"name": "keyword.control.neosfusion",
+							"match": "(@if)|(@position)",
+							"captures": {
+								"1": {
+									"name": "keyword.control.if.neosfusion"
+								},
+								"2": {
+									"name": "keyword.control.position.neosfusion"
+								}
+							}
+						}
+					]
+				},
+				"operators": {
+					"name": "keyword.operator.neosfusion",
+					"match": "(<)|(>)|(=)",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.copy.neosfusion"
+						},
+						"2": {
+							"name": "keyword.operator.unset.neosfusion"
+						},
+						"3": {
+							"name": "keyword.operator.assign.neosfusion"
+						}
+					}
+				},
+				"literals": {
+					"patterns": [
+						{
+							"match": "(null|NULL)",
+							"name": "constant.language.null.neosfusion"
+						},
+						{
+							"comment": "Boolean",
+							"patterns": [
+								{
+									"match": "(true|TRUE)",
+									"name": "constant.language.true.neosfusion"
+								},
+								{
+									"match": "(false|FALSE)",
+									"name": "constant.language.false.neosfusion"
+								}
+							]
+						},
+						{
+							"comment": "Numbers",
+							"patterns": [
+								{
+									"match": "-?\\d+(?!\\.\\d+)",
+									"name": "constant.numeric.integer.neosfusion"
+								},
+								{
+									"match": "-?\\d+\\.\\d+",
+									"name": "constant.numeric.float.neosfusion"
+								}
+							]
+						}
+					]
+				},
+				"statement_object_path": {
+					"patterns": [
+						{
+							"begin": "(@[\\w\\d_\\-]+)|([\\w\\d_\\-]+)|('.*?')|(\".*?\")",
+							"beginCaptures": {
+								"1": {
+									"name": "entity.other.attribute-name.neosfusion"
+								},
+								"2": {
+									"comment": "TODO: Set first property path element to 'variable.parameter...' but only inside prototype() blocks",
+									"name": "variable.other.neosfusion"
+								},
+								"3": {
+									"name": "string.quoted.single.neosfusion"
+								},
+								"4": {
+									"name": "string.quoted.double.neosfusion"
+								}
+							},
+							"end": "\\G",
+							"patterns": [
+								{
+									"match": "\\."
+								},
+								{
+									"include": "#statement_prototype"
+								},
+								{
+									"include": "#strings"
+								}
+							]
+						}
+					]
+				},
+				"statement_include": {
+					"name": "support.other.include.neosfusion",
+					"match": "(include):\\s+(.*)",
+					"captures": {
+						"1": {
+							"name": "keyword.other.include.neosfusion"
+						},
+						"2": {
+							"name": "string.path.include.neosfusion"
+						}
+					}
+				},
+				"statement_prototype": {
+					"begin": "(prototype)\\(",
+					"end": "\\)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.other.prototype.neosfusion"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#helper_prototype_name"
+						}
+					]
+				},
+				"eel_value": {
+					"begin": "(\\$\\{)",
+					"end": "(\\})",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.other.scope.begin.eel.neosfusion"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.other.scope.end.eel.neosfusion"
+						}
+					},
+					"patterns": [
+						{
+							"include": "source.js#expression"
+						}
+					]
+				}
+			}
+		},
+		"block": {
+			"begin": "{",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.other.scope.begin.neosfusion"
+				}
+			},
+			"end": "}",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.other.scope.end.neosfusion"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#statements"
+				}
+			]
+		},
+		"helper_prototype_name": {
+			"patterns": [
+				{
+					"match": "Neos\\.Fusion:[\\w.]+",
+					"name": "support.class.neos-fusion.neosfusion"
+				},
+				{
+					"match": "Neos\\.Neos:[\\w.]+",
+					"name": "support.class.neos-neos.neosfusion"
+				},
+				{
+					"match": "([\\w.]+):[\\w.]+",
+					"name": "entity.name.type.prototypeNamespace.$1.neosfusion"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.neosfusion",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.neosfusion",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.neosfusion",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.neosfusion",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.documentation.neosfusion",
+					"match": "(///) ([\\w\\.\\\\:|]+)( = ((?:\".*\")|\\S+))?(.*)",
+					"captures": {
+						"1": {
+							"name": "entity.name.section.properties.neosfusion"
+						},
+						"2": {
+							"name": "storage.type"
+						},
+						"3": {
+							"name": "constant"
+						},
+						"5": {
+							"name": "string.unquoted"
+						}
+					}
+				},
+				{
+					"name": "comment.line.double-slash.lsp-semantic.neosfusion",
+					"match": "// ?(@fusion-.+)",
+					"captures": {
+						"1": {
+							"name": "support.other.comment.lsp-semantic.neosfusion"
+						}
+					}
+				},
+				{
+					"name": "comment.line.double-slash.neosfusion",
+					"match": "(?<!/)//(?!/).*"
+				},
+				{
+					"name": "comment.line.number-sign.neosfusion",
+					"match": "#.*"
+				},
+				{
+					"name": "comment.block.documentation.neosfusion",
+					"begin": "^/\\*\\*",
+					"end": "\\*\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "comment.block.documentation.neosfusion"
+						}
+					},
+					"patterns": [
+						{
+							"begin": "\\s*(# properties)\\s*$",
+							"beginCaptures": {
+								"1": {
+									"name": "entity.name.section.properties.neosfusion"
+								}
+							},
+							"end": "(?=(# )|\\*\\*\/)",
+							"patterns": [
+								{
+									"match": "^\\s*(\\.)(@?[a-zA-Z_\\.\\-:]+?)(: ([\\w\\.\\\\:|]+)) (= ((?:\".*\")|\\S+) )?(.+)$",
+									"captures": {
+										"1": {
+											"name": "comment.neosfusion"
+										},
+										"2": {
+											"name": "variable.other.neosfusion",
+											"patterns": [
+												{
+													"match": "@.*",
+													"name": "entity.other.attribute-name.neosfusion"
+												}
+											]
+										},
+										"4": {
+											"name": "storage.type"
+										},
+										"6": {
+											"name": "constant"
+										},
+										"7": {
+											"name": "string.unquoted"
+										}
+									}
+								}
+							]
+						},
+						{
+							"begin": "(# (.*))\\s*$",
+							"beginCaptures": {
+								"1": {
+									"name": "entity.name.section.$2.neosfusion"
+								}
+							},
+							"end": "(?=(# )|\\*\\*\/)",
+							"patterns": [
+								{
+									"name": "markup.italic.neosfusion",
+									"begin": "```html",
+									"end": "```",
+									"patterns": [
+										{
+											"include": "text.html.derivative"
+										}
+									]
+								},
+								{
+									"name": "markup.italic.neosfusion",
+									"begin": "```neosfusion",
+									"end": "```",
+									"patterns": [
+										{
+											"include": "source.neosfusion"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "string.unquoted",
+							"match": "."
+						}
+					]
+				},
+				{
+					"name": "comment.block.neosfusion",
+					"begin": "^\\s*/\\*(?!\\*)",
+					"end": "\\*/"
+				}
+			]
+		},
+		"dsl": {
+			"patterns": [
+				{
+					"begin": "(afx)(`)",
+					"beginCaptures": {
+						"1": {
+							"name": "support.function.dsl.afx.neosfusion"
+						},
+						"2": {
+							"name": "string.quoted.other.begin.afx.neosfusion"
+						}
+					},
+					"end": "(`)",
+					"endCaptures": {
+						"1": {
+							"name": "string.quoted.other.end.afx.neosfusion"
+						}
+					},
+					"contentName": "meta.embedded.block.html",
+					"patterns": [
+						{
+							"include": "text.html.derivative"
+						}
+					]
+				},
+				{
+					"name": "string.quoted.other.dsl.fusion",
+					"begin": "([a-zA-Z_-]+)(`)",
+					"beginCaptures": {
+						"1": {
+							"name": "support.function.dsl.neosfusion"
+						},
+						"2": {
+							"name": "string.quoted.other.begin.afx.neosfusion"
+						}
+					},
+					"end": "(`)",
+					"endCaptures": {
+						"1": {
+							"name": "string.quoted.other.end.afx.neosfusion"
+						}
+					}
+				}
+			]
+		},
+		"injections_afx": {
+			"patterns": [
+				{
+					"begin": "(\\{)",
+					"end": "(\\})",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.other.scope.begin.afx.neosfusion"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.other.scope.end.afx.neosfusion"
+						}
+					},
+					"patterns": [
+						{
+							"include": "source.js#expression"
+						}
+					]
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+    "name": "vscode-neos-fusion-grammar",
+    "displayName": "vscode-neos-fusion-grammar",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "SimonSchmidt",
+    "engines": {
+        "vscode": "^1.70.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "neosfusion",
+                "aliases": [
+                    "Fusion",
+                    "neosfusion"
+                ],
+                "extensions": [
+                    ".fusion"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "neosfusion",
+                "scopeName": "source.neosfusion",
+                "path": "./syntaxes/neosfusion.tmLanguage.json"
+            }
+        ]
+    }
+}
