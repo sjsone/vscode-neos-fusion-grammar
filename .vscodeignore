@@ -4,3 +4,4 @@
 
 images/**
 !images/logo.png
+*.vsix
