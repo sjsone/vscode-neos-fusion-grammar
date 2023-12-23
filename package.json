@@ -4,6 +4,7 @@
     "description": "Syntax highlighting for Neos Fusion (and AFX)",
     "version": "0.0.1",
     "publisher": "SimonSchmidt",
+    "icon": "images/logo.png",
     "galleryBanner": {
         "color": "#2E8879",
         "theme": "dark"
