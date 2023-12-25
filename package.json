@@ -23,6 +23,10 @@
                     "Fusion",
                     "neosfusion"
                 ],
+                "icon": {
+                    "dark": "./images/filetype_dark.svg",
+                    "light": "./images/filetype_light.svg"
+                },
                 "extensions": [
                     ".fusion"
                 ],

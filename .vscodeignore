@@ -4,4 +4,6 @@
 
 images/
 !images/logo.png
+!images/filetype_dark.svg
+!images/filetype_light.svg
 *.vsix
