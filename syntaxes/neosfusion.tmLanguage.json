@@ -319,7 +319,7 @@
 									"name": "entity.name.section.properties.neosfusion"
 								}
 							},
-							"end": "(?=(# )|\\*\\*\/)",
+							"end": "(?=(# )|\\*\/)",
 							"patterns": [
 								{
 									"match": "^\\s*(\\.)(@?[a-zA-Z_\\.\\-:]+?)(: ([\\w\\.\\\\:|]+)) (= ((?:\".*\")|\\S+) )?(.+)$",
