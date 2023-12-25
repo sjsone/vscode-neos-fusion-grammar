@@ -201,13 +201,13 @@
 			"begin": "{",
 			"beginCaptures": {
 				"0": {
-					"name": "keyword.other.scope.begin.neosfusion"
+					"name": "punctuation.definition.block.begin.neosfusion"
 				}
 			},
 			"end": "}",
 			"endCaptures": {
 				"0": {
-					"name": "keyword.other.scope.end.neosfusion"
+					"name": "punctuation.definition.block.end.neosfusion"
 				}
 			},
 			"patterns": [
@@ -268,13 +268,20 @@
 							"name": "entity.name.section.properties.neosfusion"
 						},
 						"2": {
-							"name": "storage.type"
+							"name": "storage.type.neosfusion"
 						},
 						"3": {
-							"name": "constant"
+							"name": "constant.neosfusion"
 						},
 						"5": {
-							"name": "string.unquoted"
+							"name": "string.unquoted.neosfusion",
+							"patterns": [
+								{
+									"name": "markup.italic.neosfusion",
+									"begin": "`",
+									"end": "`"
+								}
+							]
 						}
 					}
 				},
