@@ -370,7 +370,7 @@
                                     "name": "keyword.other.doc.properties.neosfusion"
                                 }
                             },
-                            "end": "(?=(# )|\\*\/)",
+                            "end": "(?=(# )|\\*/)",
                             "patterns": [
                                 {
                                     "match": "^\\s*(\\.)(@?[a-zA-Z_\\.\\-:]+?)(: ([\\w\\.\\\\:|]+)) (= ((?:\".*\")|\\S+) )?(.+)$",
@@ -408,7 +408,7 @@
                                     "name": "entity.name.section.$2.neosfusion"
                                 }
                             },
-                            "end": "(?=(# )|\\*\/)",
+                            "end": "(?=(# )|\\*/)",
                             "patterns": [
                                 {
                                     "name": "markup.italic.neosfusion",
