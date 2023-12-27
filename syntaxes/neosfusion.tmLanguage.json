@@ -23,6 +23,45 @@
 		"statements": {
 			"patterns": [
 				{
+					"patterns": [
+						{
+							"name": "markup.italic.comment.line.documentation.neosfusion",
+							"comment": "Just for testing",
+							"match": "(@types)\\.(.*?)(\\.@doc) = (.*)$",
+							"captures": {
+								"1": {
+									"name": "entity.other.attribute-name.neosfusion"
+								},
+								"2": {
+									"name": "variable.other.neosfusion"
+								},
+								"3": {
+									"name": "entity.other.attribute-name.neosfusion"
+								},
+								"4": {
+									"name": "markup.quote"
+								}
+							}
+						},
+						{
+							"name": "markup.italic.comment.line.documentation.neosfusion",
+							"comment": "Just for testing",
+							"match": "(@types)\\.(.*) = (.*)$",
+							"captures": {
+								"1": {
+									"name": "entity.other.attribute-name.neosfusion"
+								},
+								"2": {
+									"name": "variable.other.neosfusion"
+								},
+								"3": {
+									"name": "storage.type.neosfusion"
+								}
+							}
+						}
+					]
+				},
+				{
 					"include": "#keywords"
 				},
 				{
@@ -36,6 +75,9 @@
 				},
 				{
 					"include": "#operators"
+				},
+				{
+					"include": "#strings"
 				},
 				{
 					"include": "#literals"
@@ -83,6 +125,11 @@
 					}
 				},
 				"literals": {
+					"include": [
+						{
+							"include": "#strings"
+						}
+					],
 					"patterns": [
 						{
 							"match": "(null|NULL)",
@@ -261,7 +308,7 @@
 		"comments": {
 			"patterns": [
 				{
-					"name": "comment.line.documentation.neosfusion",
+					"name": "markup.italic.comment.line.documentation.neosfusion",
 					"match": "(///) ([\\w\\.\\\\:|]+)( = ((?:\".*\")|\\S+))?(.*)",
 					"captures": {
 						"1": {
@@ -274,7 +321,7 @@
 							"name": "constant.neosfusion"
 						},
 						"5": {
-							"name": "string.unquoted.neosfusion",
+							"name": "markup.quote.documentation.line.text.neosfusion",
 							"patterns": [
 								{
 									"name": "markup.italic.neosfusion",
@@ -313,10 +360,14 @@
 					},
 					"patterns": [
 						{
-							"begin": "\\s*(# properties)\\s*$",
+							"name": "markup.quote.documentation.section.properties.text.neosfusion",
+							"begin": "\\s*(# (properties))\\s*$",
 							"beginCaptures": {
 								"1": {
 									"name": "entity.name.section.properties.neosfusion"
+								},
+								"2": {
+									"name": "keyword.other.doc.properties.neosfusion"
 								}
 							},
 							"end": "(?=(# )|\\*\/)",
@@ -350,6 +401,7 @@
 							]
 						},
 						{
+							"name": "markup.quote.documentation.section.$2.text.neosfusion",
 							"begin": "(# (.*))\\s*$",
 							"beginCaptures": {
 								"1": {
@@ -381,7 +433,7 @@
 							]
 						},
 						{
-							"name": "string.unquoted",
+							"name": "markup.quote.documentation.neosfusion",
 							"match": "."
 						}
 					]
