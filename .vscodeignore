@@ -1,7 +1,7 @@
 .vscode/**
 .vscode-test/**
 .gitignore
-
+.DS_Store
 images/
 !images/logo.png
 !images/filetype_dark.svg
