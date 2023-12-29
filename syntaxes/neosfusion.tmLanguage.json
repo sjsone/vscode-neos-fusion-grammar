@@ -324,7 +324,7 @@
                             "name": "markup.quote.documentation.line.text.neosfusion",
                             "patterns": [
                                 {
-                                    "name": "markup.italic.neosfusion",
+                                    "name": "markup.inline.raw.string.neosfusion",
                                     "begin": "`",
                                     "end": "`"
                                 }
@@ -422,7 +422,7 @@
                                 },
                                 {
                                     "name": "markup.italic.neosfusion",
-                                    "begin": "```neosfusion",
+                                    "begin": "```",
                                     "end": "```",
                                     "patterns": [
                                         {
