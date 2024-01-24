@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">Adds Syntax highlighting and icons for `.fusion` files</h4>
+<h4 align="center">Adds Syntax highlighting and icons for fusion files</h4>
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=SimonSchmidt.vscode-neos-fusion-grammar">📦 VSCode Marketplace</a> •
