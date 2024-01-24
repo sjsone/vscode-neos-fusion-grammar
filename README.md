@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">Adds Syntax highlighting for `.fusion` files</h4>
+<h4 align="center">Adds Syntax highlighting and icons for `.fusion` files</h4>
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=SimonSchmidt.vscode-neos-fusion-grammar">📦 VSCode Marketplace</a> •
@@ -15,8 +15,6 @@
   <a href="#Functionality">Functionality</a> •
   <a href="#FAQ">FAQ</a>
 </p>
-
-This package adds basic NEOS Fusion support like syntax highlighting and `.fusion` file icons.
 
 ## Latest Changes
 
