@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/sjsone/vscode-neos-fusion-grammar"><img src="https://raw.githubusercontent.com/sjsone/vscode-neos-fusion-grammar/main/images/logo.svg" alt="NEOS Fusion & AFX" width="200"></a>
+  <a href="https://github.com/sjsone/vscode-neos-fusion-grammar"><img src="https://raw.githubusercontent.com/sjsone/vscode-neos-fusion-grammar/main/images/logo.png" alt="NEOS Fusion & AFX" width="200"></a>
   <br>
   NEOS Fusion & AFX Language Support
   <br>
