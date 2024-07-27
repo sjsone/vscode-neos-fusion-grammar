@@ -1,7 +1,7 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
     "name": "Fusion",
-    "scopeName": "source.neosfusion",
+    "scopeName": "source.fusion",
     "patterns": [
         {
             "include": "#statements"
@@ -25,18 +25,18 @@
                 {
                     "patterns": [
                         {
-                            "name": "markup.italic.comment.line.documentation.neosfusion",
+                            "name": "markup.italic.comment.line.documentation.fusion",
                             "comment": "Just for testing",
                             "match": "(@types)\\.(.*?)(\\.@doc) = (.*)$",
                             "captures": {
                                 "1": {
-                                    "name": "entity.other.attribute-name.neosfusion"
+                                    "name": "entity.other.attribute-name.fusion"
                                 },
                                 "2": {
-                                    "name": "variable.other.neosfusion"
+                                    "name": "variable.other.fusion"
                                 },
                                 "3": {
-                                    "name": "entity.other.attribute-name.neosfusion"
+                                    "name": "entity.other.attribute-name.fusion"
                                 },
                                 "4": {
                                     "name": "markup.quote"
@@ -44,18 +44,18 @@
                             }
                         },
                         {
-                            "name": "markup.italic.comment.line.documentation.neosfusion",
+                            "name": "markup.italic.comment.line.documentation.fusion",
                             "comment": "Just for testing",
                             "match": "(@types)\\.(.*) = (.*)$",
                             "captures": {
                                 "1": {
-                                    "name": "entity.other.attribute-name.neosfusion"
+                                    "name": "entity.other.attribute-name.fusion"
                                 },
                                 "2": {
-                                    "name": "variable.other.neosfusion"
+                                    "name": "variable.other.fusion"
                                 },
                                 "3": {
-                                    "name": "storage.type.neosfusion"
+                                    "name": "storage.type.fusion"
                                 }
                             }
                         }
@@ -96,31 +96,31 @@
                 "keywords": {
                     "patterns": [
                         {
-                            "name": "keyword.control.neosfusion",
+                            "name": "keyword.control.fusion",
                             "match": "(@if)|(@position)",
                             "captures": {
                                 "1": {
-                                    "name": "keyword.control.if.neosfusion"
+                                    "name": "keyword.control.if.fusion"
                                 },
                                 "2": {
-                                    "name": "keyword.control.position.neosfusion"
+                                    "name": "keyword.control.position.fusion"
                                 }
                             }
                         }
                     ]
                 },
                 "operators": {
-                    "name": "keyword.operator.neosfusion",
+                    "name": "keyword.operator.fusion",
                     "match": "(<)|(>)|(=)",
                     "captures": {
                         "1": {
-                            "name": "keyword.operator.copy.neosfusion"
+                            "name": "keyword.operator.copy.fusion"
                         },
                         "2": {
-                            "name": "keyword.operator.unset.neosfusion"
+                            "name": "keyword.operator.unset.fusion"
                         },
                         "3": {
-                            "name": "keyword.operator.assign.neosfusion"
+                            "name": "keyword.operator.assign.fusion"
                         }
                     }
                 },
@@ -133,18 +133,18 @@
                     "patterns": [
                         {
                             "match": "(null|NULL)",
-                            "name": "constant.language.null.neosfusion"
+                            "name": "constant.language.null.fusion"
                         },
                         {
                             "comment": "Boolean",
                             "patterns": [
                                 {
                                     "match": "(true|TRUE)",
-                                    "name": "constant.language.true.neosfusion"
+                                    "name": "constant.language.true.fusion"
                                 },
                                 {
                                     "match": "(false|FALSE)",
-                                    "name": "constant.language.false.neosfusion"
+                                    "name": "constant.language.false.fusion"
                                 }
                             ]
                         },
@@ -153,11 +153,11 @@
                             "patterns": [
                                 {
                                     "match": "-?\\d+(?!\\.\\d+)",
-                                    "name": "constant.numeric.integer.neosfusion"
+                                    "name": "constant.numeric.integer.fusion"
                                 },
                                 {
                                     "match": "-?\\d+\\.\\d+",
-                                    "name": "constant.numeric.float.neosfusion"
+                                    "name": "constant.numeric.float.fusion"
                                 }
                             ]
                         }
@@ -169,17 +169,17 @@
                             "begin": "(@[\\w\\d_\\-]+)|([\\w\\d_\\-]+)|('.*?')|(\".*?\")",
                             "beginCaptures": {
                                 "1": {
-                                    "name": "entity.other.attribute-name.neosfusion"
+                                    "name": "entity.other.attribute-name.fusion"
                                 },
                                 "2": {
                                     "comment": "TODO: Set first property path element to 'variable.parameter...' but only inside prototype() blocks",
-                                    "name": "variable.other.neosfusion"
+                                    "name": "variable.other.fusion"
                                 },
                                 "3": {
-                                    "name": "string.quoted.single.neosfusion"
+                                    "name": "string.quoted.single.fusion"
                                 },
                                 "4": {
-                                    "name": "string.quoted.double.neosfusion"
+                                    "name": "string.quoted.double.fusion"
                                 }
                             },
                             "end": "\\G",
@@ -198,14 +198,14 @@
                     ]
                 },
                 "statement_include": {
-                    "name": "support.other.include.neosfusion",
+                    "name": "support.other.include.fusion",
                     "match": "(include):\\s+(.*)",
                     "captures": {
                         "1": {
-                            "name": "keyword.other.include.neosfusion"
+                            "name": "keyword.other.include.fusion"
                         },
                         "2": {
-                            "name": "string.path.include.neosfusion"
+                            "name": "string.path.include.fusion"
                         }
                     }
                 },
@@ -214,7 +214,7 @@
                     "end": "\\)",
                     "beginCaptures": {
                         "1": {
-                            "name": "keyword.other.prototype.neosfusion"
+                            "name": "keyword.other.prototype.fusion"
                         }
                     },
                     "patterns": [
@@ -228,12 +228,12 @@
                     "end": "(\\})",
                     "beginCaptures": {
                         "1": {
-                            "name": "keyword.other.scope.begin.eel.neosfusion"
+                            "name": "keyword.other.scope.begin.eel.fusion"
                         }
                     },
                     "endCaptures": {
                         "1": {
-                            "name": "keyword.other.scope.end.eel.neosfusion"
+                            "name": "keyword.other.scope.end.eel.fusion"
                         }
                     },
                     "patterns": [
@@ -248,13 +248,13 @@
             "begin": "{",
             "beginCaptures": {
                 "0": {
-                    "name": "punctuation.definition.block.begin.neosfusion"
+                    "name": "punctuation.definition.block.begin.fusion"
                 }
             },
             "end": "}",
             "endCaptures": {
                 "0": {
-                    "name": "punctuation.definition.block.end.neosfusion"
+                    "name": "punctuation.definition.block.end.fusion"
                 }
             },
             "patterns": [
@@ -267,38 +267,38 @@
             "patterns": [
                 {
                     "match": "Neos\\.Fusion:[\\w.]+",
-                    "name": "support.class.neos-fusion.neosfusion"
+                    "name": "support.class.neos-fusion.fusion"
                 },
                 {
                     "match": "Neos\\.Neos:[\\w.]+",
-                    "name": "support.class.neos-neos.neosfusion"
+                    "name": "support.class.neos-neos.fusion"
                 },
                 {
                     "match": "([\\w.]+):[\\w.]+",
-                    "name": "entity.name.type.prototypeNamespace.$1.neosfusion"
+                    "name": "entity.name.type.prototypeNamespace.$1.fusion"
                 }
             ]
         },
         "strings": {
             "patterns": [
                 {
-                    "name": "string.quoted.double.neosfusion",
+                    "name": "string.quoted.double.fusion",
                     "begin": "\"",
                     "end": "\"",
                     "patterns": [
                         {
-                            "name": "constant.character.escape.neosfusion",
+                            "name": "constant.character.escape.fusion",
                             "match": "\\\\."
                         }
                     ]
                 },
                 {
-                    "name": "string.quoted.single.neosfusion",
+                    "name": "string.quoted.single.fusion",
                     "begin": "'",
                     "end": "'",
                     "patterns": [
                         {
-                            "name": "constant.character.escape.neosfusion",
+                            "name": "constant.character.escape.fusion",
                             "match": "\\\\."
                         }
                     ]
@@ -308,23 +308,23 @@
         "comments": {
             "patterns": [
                 {
-                    "name": "markup.italic.comment.line.documentation.neosfusion",
+                    "name": "markup.italic.comment.line.documentation.fusion",
                     "match": "(///) ([\\w\\.\\\\:|]+)( = ((?:\".*\")|\\S+))?(.*)",
                     "captures": {
                         "1": {
-                            "name": "entity.name.section.properties.neosfusion"
+                            "name": "entity.name.section.properties.fusion"
                         },
                         "2": {
-                            "name": "storage.type.neosfusion"
+                            "name": "storage.type.fusion"
                         },
                         "3": {
-                            "name": "constant.neosfusion"
+                            "name": "constant.fusion"
                         },
                         "5": {
-                            "name": "markup.quote.documentation.line.text.neosfusion",
+                            "name": "markup.quote.documentation.line.text.fusion",
                             "patterns": [
                                 {
-                                    "name": "markup.inline.raw.string.neosfusion",
+                                    "name": "markup.inline.raw.string.fusion",
                                     "begin": "`",
                                     "end": "`"
                                 }
@@ -333,41 +333,41 @@
                     }
                 },
                 {
-                    "name": "comment.line.double-slash.lsp-semantic.neosfusion",
+                    "name": "comment.line.double-slash.lsp-semantic.fusion",
                     "match": "// ?(@fusion-.+)",
                     "captures": {
                         "1": {
-                            "name": "support.other.comment.lsp-semantic.neosfusion"
+                            "name": "support.other.comment.lsp-semantic.fusion"
                         }
                     }
                 },
                 {
-                    "name": "comment.line.double-slash.neosfusion",
+                    "name": "comment.line.double-slash.fusion",
                     "match": "(?<!/)//(?!/).*"
                 },
                 {
-                    "name": "comment.line.number-sign.neosfusion",
+                    "name": "comment.line.number-sign.fusion",
                     "match": "#.*"
                 },
                 {
-                    "name": "comment.block.documentation.neosfusion",
+                    "name": "comment.block.documentation.fusion",
                     "begin": "^/\\*\\*",
                     "end": "\\*/",
                     "endCaptures": {
                         "0": {
-                            "name": "comment.block.documentation.neosfusion"
+                            "name": "comment.block.documentation.fusion"
                         }
                     },
                     "patterns": [
                         {
-                            "name": "markup.quote.documentation.section.properties.text.neosfusion",
+                            "name": "markup.quote.documentation.section.properties.text.fusion",
                             "begin": "\\s*(# (properties))\\s*$",
                             "beginCaptures": {
                                 "1": {
-                                    "name": "entity.name.section.properties.neosfusion"
+                                    "name": "entity.name.section.properties.fusion"
                                 },
                                 "2": {
-                                    "name": "keyword.other.doc.properties.neosfusion"
+                                    "name": "keyword.other.doc.properties.fusion"
                                 }
                             },
                             "end": "(?=(# )|\\*/)",
@@ -376,14 +376,14 @@
                                     "match": "^\\s*(\\.)(@?[a-zA-Z_\\.\\-:]+?)(: ([\\w\\.\\\\:|]+)) (= ((?:\".*\")|\\S+) )?(.+)$",
                                     "captures": {
                                         "1": {
-                                            "name": "comment.neosfusion"
+                                            "name": "comment.fusion"
                                         },
                                         "2": {
-                                            "name": "variable.other.neosfusion",
+                                            "name": "variable.other.fusion",
                                             "patterns": [
                                                 {
                                                     "match": "@.*",
-                                                    "name": "entity.other.attribute-name.neosfusion"
+                                                    "name": "entity.other.attribute-name.fusion"
                                                 }
                                             ]
                                         },
@@ -401,17 +401,17 @@
                             ]
                         },
                         {
-                            "name": "markup.quote.documentation.section.$2.text.neosfusion",
+                            "name": "markup.quote.documentation.section.$2.text.fusion",
                             "begin": "(# (.*))\\s*$",
                             "beginCaptures": {
                                 "1": {
-                                    "name": "entity.name.section.$2.neosfusion"
+                                    "name": "entity.name.section.$2.fusion"
                                 }
                             },
                             "end": "(?=(# )|\\*/)",
                             "patterns": [
                                 {
-                                    "name": "markup.italic.neosfusion",
+                                    "name": "markup.italic.fusion",
                                     "begin": "```html",
                                     "end": "```",
                                     "patterns": [
@@ -421,25 +421,25 @@
                                     ]
                                 },
                                 {
-                                    "name": "markup.italic.neosfusion",
+                                    "name": "markup.italic.fusion",
                                     "begin": "```",
                                     "end": "```",
                                     "patterns": [
                                         {
-                                            "include": "source.neosfusion"
+                                            "include": "source.fusion"
                                         }
                                     ]
                                 }
                             ]
                         },
                         {
-                            "name": "markup.quote.documentation.neosfusion",
+                            "name": "markup.quote.documentation.fusion",
                             "match": "."
                         }
                     ]
                 },
                 {
-                    "name": "comment.block.neosfusion",
+                    "name": "comment.block.fusion",
                     "begin": "^\\s*/\\*(?!\\*)",
                     "end": "\\*/"
                 }
@@ -451,16 +451,16 @@
                     "begin": "(afx)(`)",
                     "beginCaptures": {
                         "1": {
-                            "name": "support.function.dsl.afx.neosfusion"
+                            "name": "support.function.dsl.afx.fusion"
                         },
                         "2": {
-                            "name": "string.quoted.other.begin.afx.neosfusion"
+                            "name": "string.quoted.other.begin.afx.fusion"
                         }
                     },
                     "end": "(`)",
                     "endCaptures": {
                         "1": {
-                            "name": "string.quoted.other.end.afx.neosfusion"
+                            "name": "string.quoted.other.end.afx.fusion"
                         }
                     },
                     "contentName": "meta.embedded.block.html",
@@ -475,16 +475,16 @@
                     "begin": "([a-zA-Z_-]+)(`)",
                     "beginCaptures": {
                         "1": {
-                            "name": "support.function.dsl.neosfusion"
+                            "name": "support.function.dsl.fusion"
                         },
                         "2": {
-                            "name": "string.quoted.other.begin.afx.neosfusion"
+                            "name": "string.quoted.other.begin.afx.fusion"
                         }
                     },
                     "end": "(`)",
                     "endCaptures": {
                         "1": {
-                            "name": "string.quoted.other.end.afx.neosfusion"
+                            "name": "string.quoted.other.end.afx.fusion"
                         }
                     }
                 }
@@ -497,12 +497,12 @@
                     "end": "(\\})",
                     "beginCaptures": {
                         "1": {
-                            "name": "keyword.other.scope.begin.afx.neosfusion"
+                            "name": "keyword.other.scope.begin.afx.fusion"
                         }
                     },
                     "endCaptures": {
                         "1": {
-                            "name": "keyword.other.scope.end.afx.neosfusion"
+                            "name": "keyword.other.scope.end.afx.fusion"
                         }
                     },
                     "patterns": [

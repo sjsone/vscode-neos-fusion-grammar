@@ -18,10 +18,10 @@
     "contributes": {
         "languages": [
             {
-                "id": "neosfusion",
+                "id": "fusion",
                 "aliases": [
                     "Fusion",
-                    "neosfusion"
+                    "fusion"
                 ],
                 "icon": {
                     "dark": "./images/filetype_dark.svg",
@@ -35,9 +35,9 @@
         ],
         "grammars": [
             {
-                "language": "neosfusion",
-                "scopeName": "source.neosfusion",
-                "path": "./syntaxes/neosfusion.tmLanguage.json"
+                "language": "fusion",
+                "scopeName": "source.fusion",
+                "path": "./syntaxes/fusion.tmLanguage.json"
             }
         ]
     },
