@@ -18,6 +18,15 @@
 
 ## Latest Changes
 
+### 0.0.13
+
+- renamed language id from `neosfusion` to `neos`
+
+### 0.0.11
+
+- Updated Readme
+- New Logo
+
 ### 0.0.9
 
 - Updated Readme
