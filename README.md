@@ -12,26 +12,17 @@
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=SimonSchmidt.vscode-neos-fusion-grammar">📦 VSCode Marketplace</a> •
   <a href="#how-to-use">How To Use</a> •
-  <a href="#Functionality">Functionality</a> •
-  <a href="#FAQ">FAQ</a>
+  <a href="#Functionality">Functionality</a>
 </p>
 
-## Latest Changes
+## How To Use
 
-### 0.0.13
+Just install this Extension from the Marketplace and you are good to go.
 
-- renamed language id from `neosfusion` to `neos`
+## Functionality
 
-### 0.0.11
+It will contributes the language with the id `fusion` for the file extension `.fusion`.
 
-- Updated Readme
-- New Logo
+It only provides syntax highlighting.
 
-### 0.0.9
-
-- Updated Readme
-
-### 0.0.7
-
-- Updated File Icons
-- Improved tokens for default dark theme
+The Textmate Grammar definition will be available standalone in the future.
