@@ -7,6 +7,9 @@
             "include": "#statements"
         },
         {
+            "include": "#documentation"
+        },
+        {
             "include": "#comments"
         }
     ],
@@ -22,45 +25,6 @@
     "repository": {
         "statements": {
             "patterns": [
-                {
-                    "patterns": [
-                        {
-                            "name": "markup.italic.comment.line.documentation.fusion",
-                            "comment": "Just for testing",
-                            "match": "(@types)\\.(.*?)(\\.@doc) = (.*)$",
-                            "captures": {
-                                "1": {
-                                    "name": "entity.other.attribute-name.fusion"
-                                },
-                                "2": {
-                                    "name": "variable.other.fusion"
-                                },
-                                "3": {
-                                    "name": "entity.other.attribute-name.fusion"
-                                },
-                                "4": {
-                                    "name": "markup.quote"
-                                }
-                            }
-                        },
-                        {
-                            "name": "markup.italic.comment.line.documentation.fusion",
-                            "comment": "Just for testing",
-                            "match": "(@types)\\.(.*) = (.*)$",
-                            "captures": {
-                                "1": {
-                                    "name": "entity.other.attribute-name.fusion"
-                                },
-                                "2": {
-                                    "name": "variable.other.fusion"
-                                },
-                                "3": {
-                                    "name": "storage.type.fusion"
-                                }
-                            }
-                        }
-                    ]
-                },
                 {
                     "include": "#keywords"
                 },
@@ -305,11 +269,12 @@
                 }
             ]
         },
-        "comments": {
+        "documentation": {
             "patterns": [
                 {
-                    "name": "markup.italic.comment.line.documentation.fusion",
-                    "match": "(///) ([\\w\\.\\\\:|]+)( = ((?:\".*\")|\\S+))?(.*)",
+                    "name": "markup.italic.documentation.property.fusion",
+                    "comment": "Documentation - Property",
+                    "match": "(///) ([\\w\\.,\\\\:|{}\"']+(?:<[\\w\\.,\\\\:|{}\"'<>]+>)?)\\s(.*)?",
                     "captures": {
                         "1": {
                             "name": "entity.name.section.properties.fusion"
@@ -318,9 +283,6 @@
                             "name": "storage.type.fusion"
                         },
                         "3": {
-                            "name": "constant.fusion"
-                        },
-                        "5": {
                             "name": "markup.quote.documentation.line.text.fusion",
                             "patterns": [
                                 {
@@ -333,35 +295,27 @@
                     }
                 },
                 {
-                    "name": "comment.line.double-slash.lsp-semantic.fusion",
-                    "match": "// ?(@fusion-.+)",
-                    "captures": {
+                    "name": "meta.double-slash.lsp-semantic.fusion",
+                    "comment": "Documentation - Prototype",
+                    "begin": "^(/\\*\\*)(.*)",
+                    "beginCaptures": {
                         "1": {
-                            "name": "support.other.comment.lsp-semantic.fusion"
+                            "name": "entity.name.section.prototype.fusion"
+                        },
+                        "2": {
+                            "name": "invalid.illegal"
                         }
-                    }
-                },
-                {
-                    "name": "comment.line.double-slash.fusion",
-                    "match": "(?<!/)//(?!/).*"
-                },
-                {
-                    "name": "comment.line.number-sign.fusion",
-                    "match": "#.*"
-                },
-                {
-                    "name": "comment.block.documentation.fusion",
-                    "begin": "^/\\*\\*",
-                    "end": "\\*/",
+                    },
+                    "end": "\\*\\*/",
                     "endCaptures": {
                         "0": {
-                            "name": "comment.block.documentation.fusion"
+                            "name": "entity.name.section.prototype.fusion"
                         }
                     },
                     "patterns": [
                         {
                             "name": "markup.quote.documentation.section.properties.text.fusion",
-                            "begin": "\\s*(# (properties))\\s*$",
+                            "begin": "\\s*(# (Properties|properties))\\s*$",
                             "beginCaptures": {
                                 "1": {
                                     "name": "entity.name.section.properties.fusion"
@@ -370,7 +324,7 @@
                                     "name": "keyword.other.doc.properties.fusion"
                                 }
                             },
-                            "end": "(?=(# )|\\*/)",
+                            "end": "(?=(# )|\\*\\*/)",
                             "patterns": [
                                 {
                                     "match": "^\\s*(\\.)(@?[a-zA-Z_\\.\\-:]+?)(: ([\\w\\.\\\\:|]+)) (= ((?:\".*\")|\\S+) )?(.+)$",
@@ -408,7 +362,7 @@
                                     "name": "entity.name.section.$2.fusion"
                                 }
                             },
-                            "end": "(?=(# )|\\*/)",
+                            "end": "(?=(# )|\\*\\*/)",
                             "patterns": [
                                 {
                                     "name": "markup.italic.fusion",
@@ -433,10 +387,31 @@
                             ]
                         },
                         {
-                            "name": "markup.quote.documentation.fusion",
+                            "name": "markup.bold.documentation.fusion",
                             "match": "."
                         }
                     ]
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.lsp-semantic.fusion",
+                    "match": "// ?(@fusion-.+)",
+                    "captures": {
+                        "1": {
+                            "name": "support.other.comment.lsp-semantic.fusion"
+                        }
+                    }
+                },
+                {
+                    "name": "comment.line.double-slash.fusion",
+                    "match": "(?<!/)//(?!/).*"
+                },
+                {
+                    "name": "comment.line.number-sign.fusion",
+                    "match": "#.*"
                 },
                 {
                     "name": "comment.block.fusion",
