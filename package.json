@@ -2,7 +2,7 @@
     "name": "vscode-neos-fusion-grammar",
     "displayName": "Neos Fusion & AFX Grammar",
     "description": "Syntax highlighting for Neos Fusion (and AFX)",
-    "version": "0.0.13",
+    "version": "0.1.0",
     "publisher": "SimonSchmidt",
     "icon": "images/logo.png",
     "galleryBanner": {
