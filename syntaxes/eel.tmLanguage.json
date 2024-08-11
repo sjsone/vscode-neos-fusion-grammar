@@ -1,0 +1,106 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "EEL",
+    "scopeName": "source.eel",
+    "repository": {
+        "fusionEmbeddedEntrypoint": {
+            "comment": "test",
+            "patterns": [
+                {
+                    "include": "#literals"
+                },
+                {
+                    "include": "#statements"
+                },
+                {
+                    "include": "#operators"
+                }
+            ],
+            "name": "comment.block"
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.eel",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.eel",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.eel",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.eel",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "match": "\\&\\&",
+                    "name": "keyword.operator.logical.and.eel"
+                },
+                {
+                    "match": "\\|\\|",
+                    "name": "keyword.operator.logical.or.eel"
+                },
+                {
+                    "match": "==",
+                    "name": "keyword.operator.logical.equal.eel"
+                }
+            ]
+        },
+        "literals": {
+            "patterns": [
+                {
+                    "match": "(null|NULL)",
+                    "name": "constant.language.null.fusion"
+                },
+                {
+                    "comment": "Boolean",
+                    "patterns": [
+                        {
+                            "match": "(true|TRUE)",
+                            "name": "constant.language.true.fusion"
+                        },
+                        {
+                            "match": "(false|FALSE)",
+                            "name": "constant.language.false.fusion"
+                        }
+                    ]
+                },
+                {
+                    "comment": "Numbers",
+                    "patterns": [
+                        {
+                            "match": "-?\\d+(?!\\.\\d+)",
+                            "name": "constant.numeric.integer.fusion"
+                        },
+                        {
+                            "match": "-?\\d+\\.\\d+",
+                            "name": "constant.numeric.float.fusion"
+                        }
+                    ]
+                },
+                {
+                    "include": "#strings"
+                }
+            ]
+        },
+        "statements": {
+            "patterns": [
+                {}
+            ]
+        }
+    }
+}

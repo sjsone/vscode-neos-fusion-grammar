@@ -18,6 +18,15 @@
     "contributes": {
         "languages": [
             {
+                "id": "eel",
+                "aliases": [
+                    "EEL"
+                ],
+                "extensions": [
+                    ".eel"
+                ]
+            },
+            {
                 "id": "fusion",
                 "aliases": [
                     "Fusion",
@@ -34,6 +43,11 @@
             }
         ],
         "grammars": [
+            {
+                "language": "eel",
+                "scopeName": "source.eel",
+                "path": "./syntaxes/eel.tmLanguage.json"
+            },
             {
                 "language": "fusion",
                 "scopeName": "source.fusion",

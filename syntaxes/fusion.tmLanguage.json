@@ -202,7 +202,7 @@
                     },
                     "patterns": [
                         {
-                            "include": "source.js#expression"
+                            "include": "source.eel#fusionEmbeddedEntrypoint"
                         }
                     ]
                 }
@@ -450,7 +450,7 @@
                     "begin": "([a-zA-Z_-]+)(`)",
                     "beginCaptures": {
                         "1": {
-                            "name": "support.function.dsl.fusion"
+                            "name": "support.function.dsl.$1.fusion"
                         },
                         "2": {
                             "name": "string.quoted.other.begin.afx.fusion"
