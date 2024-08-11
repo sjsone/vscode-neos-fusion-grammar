@@ -272,7 +272,7 @@
         "documentation": {
             "patterns": [
                 {
-                    "name": "markup.italic.documentation.property.fusion",
+                    "name": "support.type.documentation.property.fusion",
                     "comment": "Documentation - Property",
                     "match": "(///) ([\\w\\.,\\\\:|{}\"']+(?:<[\\w\\.,\\\\:|{}\"'<>]+>)?)\\s(.*)?",
                     "captures": {
@@ -280,7 +280,31 @@
                             "name": "entity.name.section.properties.fusion"
                         },
                         "2": {
-                            "name": "storage.type.fusion"
+                            "patterns": [
+                                {
+                                    "include": "#helper_prototype_name"
+                                },
+                                {
+                                    "match": "\\|",
+                                    "name": "keyword.operator.logical.documentation.fusion"
+                                },
+                                {
+                                    "match": ">|<",
+                                    "name": "keyword.operator.generics.documentation.fusion"
+                                },
+                                {
+                                    "match": "\\]|\\[",
+                                    "name": "keyword.operator.array.documentation.fusion"
+                                },
+                                {
+                                    "match": "(\\\\?\\w+\\\\\\w+(?:\\\\\\w+)*)",
+                                    "name": "support.class.php"
+                                },
+                                {
+                                    "match": "(array|string|number|integer|float|object)",
+                                    "name": "markup.italic.$1.documentation.fusion"
+                                }
+                            ]
                         },
                         "3": {
                             "name": "markup.quote.documentation.line.text.fusion",
