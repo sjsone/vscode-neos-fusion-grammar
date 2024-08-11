@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-neos-fusion-grammar" extension will be documented in this file.
 
+## 0.1.1
+
+- Improved highlighting in Property Documentation types
+
 ## 0.1.0
 
 - Improved Documentation Statements `///` and `/** **/`
