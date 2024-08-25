@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-neos-fusion-grammar" extension will be documented in this file.
 
+## 0.1.3
+
+- Ending `/**` with `*/` no longer breaks highlighting
+
 ## 0.1.1
 
 - Improved highlighting in Property Documentation types
