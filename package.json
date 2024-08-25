@@ -30,7 +30,7 @@
                 "extensions": [
                     ".fusion"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./languages/language-configuration.json"
             }
         ],
         "grammars": [
