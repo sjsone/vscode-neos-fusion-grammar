@@ -37,7 +37,10 @@
             {
                 "language": "fusion",
                 "scopeName": "source.fusion",
-                "path": "./syntaxes/fusion.tmLanguage.json"
+                "path": "./syntaxes/fusion.tmLanguage.json",
+                "embeddedLanguages": {
+                    "meta.embedded.block.html": "html"
+                }
             }
         ]
     },
