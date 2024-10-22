@@ -86,10 +86,6 @@
             ]
         }
     ],
-    "indentationRules": {
-        "increaseIndentPattern": "^((?!\\/\\/).)*(\\{[^}\"'`]*|\\([^)\"'`]*|\\[[^\\]\"'`]*|<.*>)$",
-        "decreaseIndentPattern": "^((?!.*?\\/\\*).*\\*/)?\\s*[\\)\\}\\]].*$"
-    },
     "onEnterRules": [
         {
             "beforeText": "^\\/\\*\\*",
