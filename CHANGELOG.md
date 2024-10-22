@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-neos-fusion-grammar" extension will be documented in this file.
 
+## 0.1.7
+
+- Added HTML to `embeddedLanguages` in language `fusion`
+
 ## 0.1.5
 
 - Fixed dedent not working correctly inside AFX
